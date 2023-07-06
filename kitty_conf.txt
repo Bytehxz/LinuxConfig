@@ -4,9 +4,11 @@ include color.ini
 
 font_family HackNerdFont
 
-font_size 11
+font_size 14
 
 disable_ligatures never
+
+term xterm
 
 url_color #E00DFF
 
@@ -33,10 +35,12 @@ input_delay 3
 sync_to_monitor yes
 
 map ctrl+shift+z toggle_layout stack
-tab_bar_style powerline
+tab_bar_style slant
 
-active_tab_background #00FFEB
-inactive_tab_background #666666
+
+active_tab_background #FF0000
+active_tab_foreground #FFFFFF
+inactive_tab_background #000000
 inactive_tab_foreground #FFFFFF
 tab_bar_margin_color black
 
@@ -48,7 +52,7 @@ map ctrl+right resize_window wider 3
 map ctrl+up resize_window taller 3
 map ctrl+down resize_window shorter 3
 
-background_opacity 0.55
+background_opacity 0.975
 
 map ctrl+shift+z toggle_layout stack
 shell zsh
