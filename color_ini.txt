@@ -6,7 +6,7 @@ window_padding_width  20
 
 # Special
 foreground #a9b1d6
-background #1a1b26
+background #1E1E1E
 
 # Black
 color0 #414868
@@ -41,7 +41,7 @@ color7  #c0caf5
 color15 #c0caf5
 
 # Cursor
-cursor #FC4B08
+cursor #1CFFE9
 cursor_text_color #9B9B9B
 
 # Selection highlight
