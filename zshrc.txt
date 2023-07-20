@@ -304,12 +304,22 @@ function clshistory(){
   echo '' > ~/.zsh_history
 }
 
+function clstarget (){
+  echo '' > /home/bytehxz/Documents/Entorno/victima
+}
+
+function settarget (){
+  iptarget=$1 
+  name=$2
+  echo "$iptarget $name" > /home/bytehxz/Documents/Entorno/victima
+}
+
 function colorsBash(){
-    cat ~/Documents/Entorno/coloresBash.txt
+    cat /home/bytehxz/Documents/Entorno/coloresBash.txt
 }
 
 function colorsPython(){
-    cat ~/Documents/Entorno/coloresPython.txt
+    cat /home/bytehxz/Documents/Entorno/coloresPython.txt
 }
 
 # bindkey "^[[H" beginning-of-line

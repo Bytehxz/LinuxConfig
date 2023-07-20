@@ -1,0 +1,4 @@
+#!/bin/bash
+
+/usr/sbin/ifconfig eth0 | grep "netmask" | awk '{print $2}'
+
