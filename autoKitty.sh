@@ -21,23 +21,21 @@ trap ctrl_c SIGINT
 installall(){
   # Download kitty terminal
   echo -e "\n\t${greenColour}Descargando kitty...${endColour}\n"
-  wget https://github.com/kovidgoyal/kitty/releases/download/v0.29.1/kitty-0.29.1-x86_64.txz
+  wget https://github.com/kovidgoyal/kitty/releases/download/v0.29.1/kitty-0.29.1-x86_64.txz &>/dev/null
 
   # Download CascadiaCode
   echo -e "\n\t${purpleColour}Descargando CascadiaCode...${endColour}\n"
-  wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/CascadiaCode.zip
+  wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/CascadiaCode.zip &>/dev/null
 
   # Download Bat
   echo -e "\n\t${yellowColour}Descargando bat...${endColour}\n"
-  wget https://github.com/sharkdp/bat/releases/download/v0.23.0/bat_0.23.0_amd64.deb
+  wget https://github.com/sharkdp/bat/releases/download/v0.23.0/bat_0.23.0_amd64.deb &>/dev/null 
 
   # Download Lsd
   echo -e "\n\t${redColour}Descargando lsd...${endColour}\n"
-  wget https://github.com/lsd-rs/lsd/releases/download/0.23.1/lsd_0.23.1_amd64.deb
+  wget https://github.com/lsd-rs/lsd/releases/download/0.23.1/lsd_0.23.1_amd64.deb &>/dev/null
 
   # Download NvChadLua
-  echo -e "\n\t${blueColour}Descargando NvChad...${endColour}\n"
-  svn checkout https://github.com/Bytehxz/Obsidian_Notes/trunk/NvChadLua/lua
 
 }
 
