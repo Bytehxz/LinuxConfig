@@ -1,6 +1,7 @@
 local overrides = require("custom.configs.overrides")
 
 local plugins = {
+  -- treesitter
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
@@ -51,6 +52,8 @@ local plugins = {
     end,
   },
 
+
+  -- mason.nvim
   {
     "williamboman/mason.nvim",
     opts = {
@@ -80,6 +83,7 @@ local plugins = {
     },
   },
 
+  --lspconfig
   {
     "neovim/nvim-lspconfig",
     config = function ()
@@ -87,5 +91,9 @@ local plugins = {
       require "custom.configs.lspconfig"
     end,
   },
+
+  -- plugin:
+
+
 }
 return plugins
