@@ -271,7 +271,7 @@ alias lla='lsd -lha --group-dirs=first'
 alias ls='lsd --group-dirs=first'
 alias nvim='/opt/nvim-linux64/bin/nvim'
 alias vimn='vim'
-alias showimg='kitty +kitten icat'
+alias showimg='/opt/kitty/bin/kitty +kitten icat'
 
 # enable auto-suggestions based on the history
 if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
