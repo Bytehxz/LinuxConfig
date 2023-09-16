@@ -329,6 +329,15 @@ function colorsPython(){
     cat /home/bytehxz/Documents/Entorno/coloresPython.txt
 }
 
+function burp (){
+  /usr/bin/burpsuite &>/dev/null & disown
+  
+}
+
+function kittyConf(){
+  /opt/nvim-linux64/bin/nvim /home/bytehxz/.config/kitty/kitty.conf
+}
+
 # bindkey "^[[H" beginning-of-line
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
