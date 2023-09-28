@@ -1,7 +1,10 @@
 # Linux_conf
-Terminal config
 
-Archivos de configuración para el sistema operativo Linux
+Archivos de configuración
+
+## Entorno
+- Bspwmrc
+- Sxhkd
+- Polybar-themes
 
 
-Prueba 1

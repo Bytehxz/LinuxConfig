@@ -1,10 +1,10 @@
 #!/usr/bin/bash
 
-IP=$(/usr/sbin/ifconfig tun0 | grep "netmask" | awk '{print $2}')
+IFACE=$(/usr/sbin/ifconfig | grep tun0 | awk '{print $1}' | tr -d ':')
 
-if [ $IP ]; then
-  echo "  $IP"
+if [ "$IFACE" = "tun0" ]; then
+    IP=$(/usr/sbin/ifconfig tun0 | grep "inet " | awk '{print $2}')
+    echo " $IP "
 else
-  echo "  No VPN"
+    echo " No VPN "
 fi
-
