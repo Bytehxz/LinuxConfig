@@ -17,7 +17,9 @@ super + Escape
 # Applications
 # Waterfox
 super + w 
-  /opt/waterfox/waterfox
+  /opt/Waterfox/waterfox
+# /opt/waterfox/waterfox
+
 
 # Burpsuite
 super + b 
@@ -131,4 +133,5 @@ super + {Left,Down,Up,Right}
 
 #Custom Resize
 alt + super + {Left,Down,Up,Right}
-    /home/bytehxz/.config/bspwm/scripts/bspwm_resize {west,south,north,east}
+	~/.config/bspwm/scripts/bspwm_resize {west,south,north,east}
+
