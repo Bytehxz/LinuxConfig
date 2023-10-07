@@ -261,9 +261,9 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias cat='/bin/bat --paging=never'
+alias cat='/bin/batcat --paging=never'
 alias catn='/bin/cat'
-alias catl='/bin/bat'
+alias catl='/bin/batcat'
 alias ll='lsd -lh --group-dirs=first'
 alias la='lsd -a --group-dirs=first'
 alias l='lsd --group-dirs=first'
@@ -274,11 +274,11 @@ alias vimn='vim'
 alias showimg='/opt/kitty/bin/kitty +kitten icat'
 
 # enable auto-suggestions based on the history
-if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-    . /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-    # change suggestion color
-    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#999'
-fi
+# if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+#    . /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+#    # change suggestion color
+#    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#999'
+# fi
 
 # enable command-not-found if installed
 if [ -f /etc/zsh_command_not_found ]; then
@@ -293,7 +293,11 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 
 function mkt(){
-  mkdir {nmap,info,exploit}
+  machine=$1 
+  mkdir $machine
+  cd $machine
+  mkdir {scan,exploit}
+  cd scan
 }
 
 function extractPorts(){
