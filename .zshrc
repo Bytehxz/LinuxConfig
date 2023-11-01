@@ -22,12 +22,12 @@ WORDCHARS=${WORDCHARS//\/} # Don't consider certain characters part of the word
 # hide EOL sign ('%')
 PROMPT_EOL_MARK=""
 
-PATH=/root/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/opt/nvim-linux64/bin:/home/bytehxz/Tools
-
+PATH=/root/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/opt/nvim-linux64/bin:/opt/BufferOF/slimm609-checksec.sh-7694735/:/opt/auto_ghidra/
 # Fix the Java Problem
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-
+# Para que funcione el gef
+export LC_CTYPE=C.UTF-8
 # configure key keybindings
 # bindkey -e                                        # emacs key bindings
 # bindkey ' ' magic-space                           # do history expansion on space
@@ -183,7 +183,7 @@ if [ "$color_prompt" = yes ]; then
 
         ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=212 # pink tipo for while do  
         
-        ZSH_HIGHLIGHT_STYLES[arg0]=fg=207 # blue # comando principal
+        ZSH_HIGHLIGHT_STYLES[arg0]=fg=207 # comando principal
         ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=magenta,underline # green
         ZSH_HIGHLIGHT_STYLES[precommand]=fg=magenta,underline # green
         
@@ -345,3 +345,5 @@ function kittyConf(){
 # bindkey "^[[H" beginning-of-line
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
