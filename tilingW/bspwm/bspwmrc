@@ -25,7 +25,7 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 # bspc rule -a burp-StartBurp state=floating
 
-feh --bg-fill /home/bytehxz/Documents/Entorno/wallpapers/archkali.png &
+feh --bg-fill /home/bytehxz/Documents/Entorno/LinuxConfig/Wallpapers/archkali.png &
 
 # bash ~/.config/polybar/launch.sh --cuts &
 # bash ~/.config/polybar/launch.sh --hack &

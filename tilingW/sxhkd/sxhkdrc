@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + d
-  rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/polybar/cuts/scripts/rofi/launcher.rasi
+  rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/polybar/blocks/scripts/rofi/launcher.rasi
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -17,13 +17,12 @@ super + Escape
 # Applications
 # Waterfox
 super + w 
-  /opt/Waterfox/waterfox
+  /opt/Waterfox/waterfox/waterfox
 # /opt/waterfox/waterfox
 
-
-# Burpsuite
-super + b 
-  /usr/bin/burpsuite
+# Telegram
+super + x
+  /opt/Telegram/Telegram
 
 #
 # bspwm hotkeys
@@ -54,8 +53,8 @@ super + v
 #
 
 # set the window state
-# super + {t,shift + t,s,f}
-#	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+super + {t,shift + t,s,f}
+  bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
 super + ctrl + {m,x,y,z}

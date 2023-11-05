@@ -17,6 +17,7 @@ user=$(whoami)
 # Parte 4 --------------------------------------------- instalando herramientas y las fuentes necesarias para que todo funcione
 function toolsUtils(){
   echo -e "${blueColour}[!] Instalando las fuentes para que se vea bonito :D${endColour}"
+  sleep 2
   # Instalación de la herramientas que suelo usar
   sudo apt install -y rofi feh picom bat lsd xclip npm
 
@@ -32,13 +33,17 @@ function toolsUtils(){
   fi
 
   echo -e "${turquoiseColour}[+] Ha terminado la instalación de todo lo necesario"
+  sleep 2
 }
 
 # Parte 3 ---------------------------------------------
 function installOPT(){
   # Instalacion del navegador Waterfox
   echo -e "${yellowColour}[!] Instalando todo en el directorio /opt${endColour}"
+  sleep 2
 
+  echo -e "${turquoiseColour}[%] Instalando waterfox${endColour}"
+  sleep 1
   sudo chown ${user}:${user} /opt
   cd /opt 
   mkdir Waterfox
@@ -48,6 +53,8 @@ function installOPT(){
   rm linux
 
   # Instalando la kittyTerminal
+  echo -e "${turquoiseColour}[%] Instalando kitty${endColour}"
+  sleep 1
   cd /opt 
   mkdir kitty
   cd kitty
@@ -56,10 +63,51 @@ function installOPT(){
   rm nvim-linux64.tar.gz
 
   # Requerimientos para instalar nvim
+  echo -e "${turquoiseColour}[%] Instalando nvim${endColour}"
+  sleep 1
   cd /opt 
   wget https://github.com/neovim/neovim/releases/download/v0.9.4/nvim-linux64.tar.gz
   tar -xf nvim-linux64.tar.gz
   rm nvim-linux64.tar.gz
+
+  echo -e "${turquoiseColour}[%] Instalando fzf coloca en todas las opciones y${endColour}"
+  sleep 3
+  # Usuario normal
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  ~/.fzf/install
+  # Para root
+  sleep 3
+  sudo cp -r ${home}/.fzf /root/
+  sudo /root/.fzf/install   
+
+  echo -e "${turquoiseColour}[%] Instalando powerlevel10k${endColour}"
+  sleep 2
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+  # root
+  sudo cp -r ${home}/powerlevel10k /root/
+
+  echo -e "${turquoiseColour}[%] Instalando NvChad${endColour}"
+  sleep 2
+  git clone https://github.com/NvChad/NvChad ~/.config/nvim 
+  sudo ln -s -f ${home}/.config/nvim /root/.config/nvim
+  rm -rf ${home}/.config/nvim/lua/custom
+  # root
+  cp -r ${home}/Documents/Entorno/LinuxConfig/Neovim/custom ${home}/.config/nvim/lua
+
+  echo -e "${purpleColour}[%] Ajustando los archivos .zshrc y .p10k.zsh${endColour}"
+  sleep 2
+  cp ${home}/Entorno/LinuxConfig/.zshrc ${home}/.zshrc
+  # root
+  sudo ln -s -f ${home}/.zshrc /root/.zshrc
+  cp ${home}/Entorno/LinuxConfig/.p10k.zsh ${home}/.p10k.zsh
+  # root
+  sudo ln -s -f ${home}/.p10k.zsh /root/.p10k.zsh
+  
+  echo -e "${purpleColour}[%] Ajustando los archivos de la polybar${endColour}"
+  sleep 2
+  rm -rf ${home}/.config/polybar/blocks
+  cp -r ${home}/Documents/Entorno/LinuxConfig/tilingW/polybar-Themes/blocks ${home}/.config/polybar/
+
 
   echo -e "${greenColour}[+] Terminado ${endColour}"
   sleep 1.5
@@ -91,7 +139,7 @@ function polybarConf(){
   cd polybar-themes
   chmod +x setup.sh
   echo -e "${purpleColour}Selecciona la opcion 1..${endColour}"
-  sleep 2
+  sleep 3
   bash setup.sh
 
   echo -e "${greenColour}[+] Terminado ${endColour}"
@@ -145,13 +193,15 @@ function bspwm_sxhkd(){
 
 }
 
-
-
-
 # Banner principal
 # Parte 0 ------------------------------------
 function banner (){
-  figlet "Bspwm.sh"
+  figlet "Bspwm.sh" 2>/dev/null
+  if [[ ! $? -eq 0 ]]; then
+    sudo apt install figlet -y
+    figlet "Bspwm.sh"
+  fi
+
   if [[ $user == 'root' ]]; then
     echo -e "${redColour}[!] No es necesario que lo ejecutes como root ${endColour}"
     exit 1
