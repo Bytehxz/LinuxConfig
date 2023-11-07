@@ -20,6 +20,8 @@ function toolsUtils(){
   sleep 2
   # Instalación de la herramientas que suelo usar
   sudo apt install -y rofi feh picom bat lsd xclip npm
+  # Instalando lo necesario para el lenguaje go
+  go install golang.org/x/tools/gopls@latest
 
   # Instalacion de fuentes nerdfonts
   if [[ -d /usr/local/share/fonts/ ]]; then

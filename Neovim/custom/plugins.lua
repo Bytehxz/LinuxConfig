@@ -5,6 +5,7 @@ local plugins = {
       ensure_installed = {
         "pyright",
         "clangd",
+        "gopls"
       },
     },
   },
