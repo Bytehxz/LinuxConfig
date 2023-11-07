@@ -4,6 +4,7 @@ local plugins = {
     opts = {
       ensure_installed = {
         "pyright",
+        "clangd",
       },
     },
   },
