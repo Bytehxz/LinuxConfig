@@ -8,3 +8,6 @@ Archivos de configuración
 - Polybar-themes
 
 
+### Tested on Kali
+
+
