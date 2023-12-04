@@ -66,7 +66,7 @@ function installOPT(){
 
   # Requerimientos para instalar nvim
   echo -e "${turquoiseColour}[%] Instalando nvim${endColour}"
-  sleep 1
+  sleep 3
   cd /opt 
   wget https://github.com/neovim/neovim/releases/download/v0.9.4/nvim-linux64.tar.gz
   tar -xf nvim-linux64.tar.gz
@@ -98,10 +98,10 @@ function installOPT(){
 
   echo -e "${purpleColour}[%] Ajustando los archivos .zshrc y .p10k.zsh${endColour}"
   sleep 2
-  cp ${home}/Entorno/LinuxConfig/.zshrc ${home}/.zshrc
+  cp ${home}/Documents/Entorno/LinuxConfig/.zshrc ${home}/.zshrc
   # root
   sudo ln -s -f ${home}/.zshrc /root/.zshrc
-  cp ${home}/Entorno/LinuxConfig/.p10k.zsh ${home}/.p10k.zsh
+  cp ${home}/Documents/Entorno/LinuxConfig/.p10k.zsh ${home}/.p10k.zsh
   # root
   sudo ln -s -f ${home}/.p10k.zsh /root/.p10k.zsh
   
@@ -122,6 +122,7 @@ function installOPT(){
 function polybarConf(){
   # Dependencias de la polybar
   echo -e "${turquoiseColour}[!] Instalando dependencias de la polybar ${endColour}"
+  sleep 3
   sudo apt install -y cmake cmake-data pkg-config python3-sphinx libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev libjsoncpp-dev libmpdclient-dev libuv1-dev libnl-genl-3-dev
 
   cd ${home}/Documents
@@ -155,7 +156,7 @@ function polybarConf(){
 # Parte 1 --------------------------------------------
 function bspwm_sxhkd(){
   echo -e "${yellowColour}[!] Instalando dependencias y clonando repositorios${endColour}"
-  sleep 1.5
+  sleep 3
   # Dependencias necesarias
   sudo apt install -y build-essential git vim libxcb-util0-dev libxcb-ewmh-dev libxcb-randr0-dev libxcb-icccm4-dev libxcb-keysyms1-dev libxcb-xinerama0-dev libasound2-dev libxcb-xtest0-dev libxcb-shape0-dev
 
