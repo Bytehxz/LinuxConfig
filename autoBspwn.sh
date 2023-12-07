@@ -60,9 +60,9 @@ function installOPT(){
   cd /opt 
   mkdir kitty
   cd kitty
-  wget https://github.com/kovidgoyal/kitty/releases/download/v0.30.1/kitty-0.30.1-x86_64.txz
-  tar -xf kitty-0.30.1-x86_64.txz
-  rm nvim-linux64.tar.gz
+  wget https://github.com/kovidgoyal/kitty/releases/download/v0.31.0/kitty-0.31.0-x86_64.txz
+  tar -xf kitty-0.31.0-x86_64.txz
+  rm kitty-0.31.0-x86_64.txz
 
   # Requerimientos para instalar nvim
   echo -e "${turquoiseColour}[%] Instalando nvim${endColour}"
