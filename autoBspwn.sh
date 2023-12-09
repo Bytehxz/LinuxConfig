@@ -19,7 +19,7 @@ function toolsUtils(){
   echo -e "${blueColour}[!] Instalando las fuentes para que se vea bonito :D${endColour}"
   sleep 2
   # Instalación de la herramientas que suelo usar
-  sudo apt install -y rofi feh picom bat lsd xclip npm
+  sudo apt install -y rofi feh picom bat xclip npm
   # Instalando lo necesario para el lenguaje go
   go install golang.org/x/tools/gopls@latest
 
@@ -32,6 +32,8 @@ function toolsUtils(){
     sudo unzip NerdFontsSymbolsOnly.zip -d /usr/local/share/fonts/
     sudo unzip CascadiaCode.zip -d /usr/local/share/fonts/
     sudo unzip Iosevka.zip -d /usr/local/share/fonts/
+    wget https://github.com/lsd-rs/lsd/releases/download/v1.0.0/lsd_1.0.0_amd64.deb
+    sudo dpkg -i lsd_1.0.0_amd64.deb
   fi
 
   echo -e "${turquoiseColour}[+] Ha terminado la instalación de todo lo necesario"
