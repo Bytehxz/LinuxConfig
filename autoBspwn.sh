@@ -113,6 +113,10 @@ function installOPT(){
   cp -r ${home}/Documents/Entorno/LinuxConfig/tilingW/polybar-Themes/blocks ${home}/.config/polybar/
 
 
+  echo -e "${purpleColour}[%] Ajustando los archivos para poder usar ghidra de forma automática${endColour}"
+  sleep 2
+  cp -R ${home}/Documents/Entorno/LinuxConfig/tilingW/auto_ghidra /opt/
+  
   echo -e "${greenColour}[+] Terminado ${endColour}"
   sleep 1.5
   # Instalación final
