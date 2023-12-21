@@ -11,3 +11,9 @@ Archivos de configuración
 ### Tested on Kali
 
 
+# Lo primero que debes hacer es:
+
+```bash
+mkdir -p ~/Documents/Entorno/ && cd ~/Documents/Entorno/
+
+```
