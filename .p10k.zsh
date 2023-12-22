@@ -38,6 +38,11 @@
     status
     command_execution_time
     context
+    virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
+    direnv                  # direnv status (https://direnv.net/)
+    pyenv                   # python environment (https://github.com/pyenv/pyenv)
+
+    # ip                    # ip address and bandwidth usage for a specified network interface
     # =========================[ Line #2 ]=========================
     newline                 # \n
     # prompt_char           # prompt symbol
@@ -968,7 +973,8 @@
 
   ###[ virtualenv: python virtual environment (https://docs.python.org/3/library/venv.html) ]###
   # Python virtual environment color.
-  typeset -g POWERLEVEL9K_VIRTUALENV_FOREGROUND=37
+  typeset -g POWERLEVEL9K_VIRTUALENV_FOREGROUND=232
+  typeset -g POWERLEVEL9K_VIRTUALENV_BACKGROUND=226
   # Don't show Python version next to the virtual environment name.
   typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=false
   # If set to "false", won't show virtualenv if pyenv is already shown.
