@@ -188,6 +188,7 @@ function bspwm_sxhkd(){
   cp -R ${home}/Documents/Entorno/LinuxConfig/tilingW/sxhkd ${home}/.config/
   cp -R ${home}/Documents/Entorno/LinuxConfig/tilingW/lsd ${home}/.config/
   cp -R ${home}/Documents/Entorno/LinuxConfig/kitty ${home}/.config/
+  sudo ln -s -f ${home}/.config/kitty /root/.config/kitty
 
   cp ${home}/Documents/Entorno/LinuxConfig/kaliConf/* ${home}/Documents/Entorno
   # cd ${home}/Documents/Entorno
