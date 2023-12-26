@@ -296,7 +296,7 @@ function mkt(){
   machine=$1 
   mkdir $machine
   cd $machine
-  mkdir {scan,exploit}
+  mkdir {scan,content}
   cd scan
 }
 
@@ -342,8 +342,21 @@ function kittyConf(){
   /opt/nvim-linux64/bin/nvim /home/bytehxz/.config/kitty/kitty.conf
 }
 
+function clsDocker(){
+  docker rm --force $(docker ps -aq)
+  docker rmi --force $(docker images -aq)
+  docker network rm $(docker network ls -q)
+  docker volume rm $(docker volume ls -q)
+}
 # bindkey "^[[H" beginning-of-line
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# bun completions
+[ -s "/home/bytehxz/.local/share/reflex/bun/_bun" ] && source "/home/bytehxz/.local/share/reflex/bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.local/share/reflex/bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
