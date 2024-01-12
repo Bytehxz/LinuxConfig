@@ -1,9 +1,9 @@
 #!/bin/bash
 
-IP=$(/usr/sbin/ifconfig enp0s3 | grep "netmask" | awk '{print $2}')
+IP=$(/usr/sbin/ifconfig eth0 | grep "netmask" | awk '{print $2}')
 
 if [ $IP ]; then
-  echo "  $IP"
+  echo " $IP "
 else
-  echo "  No IP"
+  echo " No IP "
 fi

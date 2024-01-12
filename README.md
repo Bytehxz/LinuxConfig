@@ -17,3 +17,21 @@ Archivos de configuración
 mkdir -p ~/Documents/Entorno/ && cd ~/Documents/Entorno/
 
 ```
+
+Para poder tener 2 interfaces funcionales en Virtualbox y Kali Linux 
+```bash
+cd /etc/network
+
+nvim interfaces
+
+#Host only
+auto eth0
+iface eth0 inet dhcp
+
+#NAT network
+auto eth1
+iface eth1 inet dhcp
+
+
+reboot
+```
