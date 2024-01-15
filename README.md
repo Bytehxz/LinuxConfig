@@ -1,4 +1,4 @@
-# Linux_conf
+# Linux Dotfiles
 
 Archivos de configuración
 
@@ -8,8 +8,7 @@ Archivos de configuración
 - Polybar-themes
 
 
-### Tested on Kali
-
+### Tested on Kali Linux
 
 # Lo primero que debes hacer es:
 
