@@ -6,6 +6,7 @@ Archivos de configuración
 - Bspwmrc
 - Sxhkd
 - Polybar-themes
+- Lazygit
 
 
 ### Tested on Kali Linux
