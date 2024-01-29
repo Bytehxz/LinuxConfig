@@ -296,7 +296,7 @@ function mkt(){
   machine=$1 
   mkdir $machine
   cd $machine
-  mkdir {scan,content}
+  mkdir {scan,content,exploit}
   cd scan
 }
 
