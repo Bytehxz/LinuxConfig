@@ -21,6 +21,8 @@ function toolsUtils(){
   # Instalación de la herramientas que suelo usar
   sudo apt install -y rofi feh picom bat xclip npm
 
+  sudo apt install -y --reinstall virtualbox-guest-x11 # Para instalar la virtualbox tools
+
   # Instalando lo necesario para el lenguaje go
   go install golang.org/x/tools/gopls@latest
   go install github.com/jesseduffield/lazygit@latest
@@ -64,8 +66,8 @@ function installOPT(){
   cd /opt 
   mkdir kitty
   cd kitty
-  wget https://github.com/kovidgoyal/kitty/releases/download/v0.31.0/kitty-0.31.0-x86_64.txz
-  tar -xf kitty-0.31.0-x86_64.txz
+  wget https://github.com/kovidgoyal/kitty/releases/download/v0.32.1/kitty-0.32.1-x86_64.txz
+  tar -xf kitty-0.32.1-x86_64.txz
   rm kitty-0.31.0-x86_64.txz
 
   # Requerimientos para instalar nvim
