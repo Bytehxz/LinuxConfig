@@ -23,6 +23,12 @@ function toolsUtils(){
 
   sudo apt install -y --reinstall virtualbox-guest-x11 # Para instalar la virtualbox tools
 
+  #instalacion de go 
+  cd ${home}/Documents
+  wget https://go.dev/dl/go1.22.0.linux-amd64.tar.gz
+  sudo rm -rf /usr/local/go 
+  sudo tar -C /usr/local -xzf go1.22.0.linux-amd64.tar.gz
+
   # Instalando lo necesario para el lenguaje go
   go install golang.org/x/tools/gopls@latest
   go install github.com/jesseduffield/lazygit@latest
