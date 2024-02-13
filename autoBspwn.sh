@@ -76,6 +76,14 @@ function installOPT(){
   tar -xf kitty-0.32.1-x86_64.txz
   rm kitty-0.31.0-x86_64.txz
 
+  # instalando Telegram
+  echo -e "${turquoiseColour}[%] Instalando Telegram${endColour}"
+  sleep 1
+  cd /opt 
+  wget https://telegram.org/dl/desktop/linux
+  tar -xf linux
+  rm -rf linux
+
   # Requerimientos para instalar nvim
   echo -e "${turquoiseColour}[%] Instalando nvim${endColour}"
   sleep 3
@@ -103,7 +111,7 @@ function installOPT(){
   echo -e "${turquoiseColour}[%] Instalando NvChad${endColour}"
   sleep 2
   git clone https://github.com/NvChad/NvChad ~/.config/nvim 
-  sudo ln -s -f ${home}/.config/nvim /root/.config/nvim
+  # sudo ln -s -f ${home}/.config/nvim /root/.config/nvim
   rm -rf ${home}/.config/nvim/lua/custom
   # root
   cp -r ${home}/Documents/Entorno/LinuxConfig/Neovim/custom ${home}/.config/nvim/lua
@@ -199,6 +207,8 @@ function bspwm_sxhkd(){
   cp -R ${home}/Documents/Entorno/LinuxConfig/tilingW/lsd ${home}/.config/
   cp -R ${home}/Documents/Entorno/LinuxConfig/kitty ${home}/.config/
   sudo ln -s -f ${home}/.config/kitty /root/.config/kitty
+  sudo ln -s -f ${home}/.config/lsd /root/.config/lsd
+  sudo ln -s -f ${home}/.config/nvim /root/.config/nvim
 
   cp ${home}/Documents/Entorno/LinuxConfig/kaliConf/* ${home}/Documents/Entorno
   # cd ${home}/Documents/Entorno
