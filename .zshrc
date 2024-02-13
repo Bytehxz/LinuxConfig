@@ -291,15 +291,6 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-
-function mkt(){
-  machine=$1 
-  mkdir $machine
-  cd $machine
-  mkdir {scan,content,exploit}
-  cd scan
-}
-
 function extractPorts(){
     ports="$(cat $1 | grep -oP '\d{1,5}/open' | awk '{print $1}' FS='/' | xargs | tr ' ' ',')"
     ip_address="$(cat $1 | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u | head -n 1)"
@@ -323,6 +314,10 @@ function settarget (){
   iptarget=$1 
   name=$2
   echo "$iptarget $name" > /home/bytehxz/Documents/Entorno/victima
+  mkdir $name
+  cd $name
+  mkdir {scan,content,exploit}
+  cd scan
 }
 
 function colorsBash(){
