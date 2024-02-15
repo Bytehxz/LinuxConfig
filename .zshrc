@@ -314,10 +314,14 @@ function settarget (){
   iptarget=$1 
   name=$2
   echo "$iptarget $name" > /home/bytehxz/Documents/Entorno/victima
-  mkdir $name
-  cd $name
-  mkdir {scan,content,exploit}
-  cd scan
+  if [[ ! -d $name ]]; then
+    mkdir $name
+    cd $name
+    mkdir {scan,content,exploit}
+    cd scan
+  else
+    cd $name/scan
+  fi
 }
 
 function colorsBash(){
