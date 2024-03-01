@@ -314,14 +314,20 @@ function settarget (){
   iptarget=$1 
   name=$2
   echo "$iptarget $name" > /home/bytehxz/Documents/Entorno/victima
-  if [[ ! -d $name ]]; then
-    mkdir $name
-    cd $name
+}
+
+function mkt (){
+  ip_address=$(/bin/cat /home/bytehxz/Documents/Entorno/victima | awk '{print $1}')
+  machine_name=$(/bin/cat /home/bytehxz/Documents/Entorno/victima | awk '{print $2}')
+  if [ $ip_address ] && [ $machine_name ]; then
+    mkdir $machine_name
+    cd $machine_name
     mkdir {scan,content,exploit}
     cd scan
   else
-    cd $name/scan
+    echo -e "[!] No target!"
   fi
+
 }
 
 function colorsBash(){
@@ -359,3 +365,6 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # bun
 export BUN_INSTALL="$HOME/.local/share/reflex/bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Created by `pipx` on 2024-02-15 23:01:25
+export PATH="$PATH:/home/bytehxz/.local/bin"

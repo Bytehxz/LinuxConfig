@@ -29,8 +29,8 @@ feh --bg-fill /home/bytehxz/Documents/Entorno/LinuxConfig/Wallpapers/rose_fire.j
 
 # bash ~/.config/polybar/launch.sh --cuts &
 # bash ~/.config/polybar/launch.sh --hack &
-# bash ~/.config/polybar/launch.sh --blocks &
-bash ~/.config/polybar/launch.sh --docky &
+bash ~/.config/polybar/launch.sh --blocks &
+# bash ~/.config/polybar/launch.sh --docky &
 # picom & 
 
 picom --config ~/.config/picom/picom.conf &
@@ -39,7 +39,7 @@ picom --config ~/.config/picom/picom.conf &
 
 bspc config border_width         3
 #bspc config focused_border_color "#1CFFE9"
-bspc config focused_border_color "#FB680F"
+bspc config focused_border_color "#7d008c"
 bspc config normal_border_color "#282e3a"
 
 xrandr --output Virtual1 --mode 1920x1080
