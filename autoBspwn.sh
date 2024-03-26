@@ -17,9 +17,9 @@ user=$(whoami)
 # Parte 4 --------------------------------------------- instalando herramientas y las fuentes necesarias para que todo funcione
 function toolsUtils(){
   echo -e "${blueColour}[!] Instalando las fuentes para que se vea bonito :D${endColour}"
-  sleep 2
+  sleep 4
   # Instalación de la herramientas que suelo usar
-  sudo apt install -y rofi feh picom bat xclip npm
+  sudo apt install -y rofi feh picom bat xclip npm bspwm fd-find ripgrep
 
   sudo apt install -y --reinstall virtualbox-guest-x11 # Para instalar la virtualbox tools
 
@@ -30,7 +30,7 @@ function toolsUtils(){
   sudo tar -C /usr/local -xzf go1.22.0.linux-amd64.tar.gz
 
   # Instalando lo necesario para el lenguaje go
-  go install golang.org/x/tools/gopls@latest
+  # go install golang.org/x/tools/gopls@latest
   go install github.com/jesseduffield/lazygit@latest
 
   # Instalacion de fuentes nerdfonts
@@ -54,7 +54,7 @@ function toolsUtils(){
 function installOPT(){
   # Instalacion del navegador Waterfox
   echo -e "${yellowColour}[!] Instalando todo en el directorio /opt${endColour}"
-  sleep 2
+  sleep 3
 
   echo -e "${turquoiseColour}[%] Instalando waterfox${endColour}"
   sleep 1
@@ -72,9 +72,9 @@ function installOPT(){
   cd /opt 
   mkdir kitty
   cd kitty
-  wget https://github.com/kovidgoyal/kitty/releases/download/v0.32.1/kitty-0.32.1-x86_64.txz
-  tar -xf kitty-0.32.1-x86_64.txz
-  rm kitty-0.31.0-x86_64.txz
+  wget https://github.com/kovidgoyal/kitty/releases/download/v0.33.0/kitty-0.33.0-x86_64.txz
+  tar -xf kitty-0.33.0-x86_64.txz
+  rm kitty-0.33.0-x86_64.txz
 
   # instalando Telegram
   echo -e "${turquoiseColour}[%] Instalando Telegram${endColour}"
@@ -88,10 +88,11 @@ function installOPT(){
   echo -e "${turquoiseColour}[%] Instalando nvim${endColour}"
   sleep 3
   cd /opt 
-  wget https://github.com/neovim/neovim/releases/download/v0.9.4/nvim-linux64.tar.gz
+  wget https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz
   tar -xf nvim-linux64.tar.gz
   rm nvim-linux64.tar.gz
 
+  # -------------------------------------------------------------------
   echo -e "${turquoiseColour}[%] Instalando fzf coloca en todas las opciones y${endColour}"
   sleep 3
   # Usuario normal
@@ -102,20 +103,20 @@ function installOPT(){
   sudo cp -r ${home}/.fzf /root/
   sudo /root/.fzf/install   
 
+  # -------------------------------------------------------------------
   echo -e "${turquoiseColour}[%] Instalando powerlevel10k${endColour}"
   sleep 2
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
   # root
   sudo cp -r ${home}/powerlevel10k /root/
 
-  echo -e "${turquoiseColour}[%] Instalando NvChad${endColour}"
+  # -------------------------------------------------------------------
+  echo -e "${turquoiseColour}[%] Instalando la configuracion de nvim ${endColour}"
   sleep 2
-  git clone https://github.com/NvChad/NvChad ~/.config/nvim 
-  # sudo ln -s -f ${home}/.config/nvim /root/.config/nvim
-  rm -rf ${home}/.config/nvim/lua/custom
-  # root
-  cp -r ${home}/Documents/Entorno/LinuxConfig/Neovim/custom ${home}/.config/nvim/lua
+  git clone https://github.com/Bytehxz/nvim ~/.config/nvim/
+  sudo ln -s -f ${home}/.config/nvim /root/.config/nvim
 
+  # -------------------------------------------------------------------
   echo -e "${purpleColour}[%] Ajustando los archivos .zshrc y .p10k.zsh${endColour}"
   sleep 2
   cp ${home}/Documents/Entorno/LinuxConfig/.zshrc ${home}/.zshrc
@@ -125,15 +126,17 @@ function installOPT(){
   # root
   sudo ln -s -f ${home}/.p10k.zsh /root/.p10k.zsh
   
+  # -------------------------------------------------------------------
   echo -e "${purpleColour}[%] Ajustando los archivos de la polybar${endColour}"
   sleep 2
   rm -rf ${home}/.config/polybar/blocks
-  cp -r ${home}/Documents/Entorno/LinuxConfig/tilingW/polybar-Themes/blocks ${home}/.config/polybar/
+  cp -r ${home}/Documents/Entorno/LinuxConfig/config/polybar-Themes/blocks ${home}/.config/polybar/
 
 
+  # -------------------------------------------------------------------
   echo -e "${purpleColour}[%] Ajustando los archivos para poder usar ghidra de forma automática${endColour}"
   sleep 2
-  cp -R ${home}/Documents/Entorno/LinuxConfig/tilingW/auto_ghidra /opt/
+  cp -R ${home}/Documents/Entorno/LinuxConfig/opt/auto_ghidra /opt/
   
   echo -e "${greenColour}[+] Terminado ${endColour}"
   sleep 1.5
@@ -160,17 +163,17 @@ function polybarConf(){
   make -j$(nproc)
   sudo make install
 
-  cd $home/Documents
+  cd ${home}/Documents
   # polybar-themes
   git clone --depth=1 https://github.com/adi1090x/polybar-themes.git 
   cd polybar-themes
   chmod +x setup.sh
   echo -e "${purpleColour}Selecciona la opcion 1..${endColour}"
-  sleep 3
+  sleep 5
   bash setup.sh
 
   echo -e "${greenColour}[+] Terminado ${endColour}"
-  sleep 1.5
+  sleep 2
   # Se empieza a instalar todo lo que va en opt
   installOPT
 
@@ -201,16 +204,17 @@ function bspwm_sxhkd(){
   cd ..
 
   # Configuración de las carpetas .config
-  cp -R ${home}/Documents/Entorno/LinuxConfig/tilingW/picom ${home}/.config/
-  cp -R ${home}/Documents/Entorno/LinuxConfig/tilingW/bspwm ${home}/.config/
-  cp -R ${home}/Documents/Entorno/LinuxConfig/tilingW/sxhkd ${home}/.config/
-  cp -R ${home}/Documents/Entorno/LinuxConfig/tilingW/lsd ${home}/.config/
-  cp -R ${home}/Documents/Entorno/LinuxConfig/kitty ${home}/.config/
+  cp -R ${home}/Documents/Entorno/LinuxConfig/config/picom ${home}/.config/
+  cp -R ${home}/Documents/Entorno/LinuxConfig/config/bspwm ${home}/.config/
+  cp -R ${home}/Documents/Entorno/LinuxConfig/config/sxhkd ${home}/.config/
+  cp -R ${home}/Documents/Entorno/LinuxConfig/config/lsd ${home}/.config/
+  cp -R ${home}/Documents/Entorno/LinuxConfig/config/kitty ${home}/.config/
+  sleep 3
   sudo ln -s -f ${home}/.config/kitty /root/.config/kitty
   sudo ln -s -f ${home}/.config/lsd /root/.config/lsd
   sudo ln -s -f ${home}/.config/nvim /root/.config/nvim
 
-  cp ${home}/Documents/Entorno/LinuxConfig/kaliConf/* ${home}/Documents/Entorno
+  cp ${home}/Documents/Entorno/LinuxConfig/kali.conf/* ${home}/Documents/Entorno
   # cd ${home}/Documents/Entorno
   # touch victima
   # cp ${home}/Documents/Entorno/LinuxConfig/
@@ -230,13 +234,15 @@ function banner (){
   if [[ ! $? -eq 0 ]]; then
     sudo apt install figlet -y
     figlet "Bspwm.sh"
+    sleep 3
+  else
+    sleep 3
   fi
 
   if [[ $user == 'root' ]]; then
     echo -e "${redColour}[!] No es necesario que lo ejecutes como root ${endColour}"
     exit 1
   else
-
     bspwm_sxhkd
   fi
 }

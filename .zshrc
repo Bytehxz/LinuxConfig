@@ -339,7 +339,9 @@ function colorsPython(){
 }
 
 function burp (){
-  /usr/bin/burpsuite &>/dev/null & disown
+  # /usr/bin/burpsuite &>/dev/null & disown
+#  ~/BurpSuiteCommunity/BurpsuiteCommunity &>/dev/null & disown
+   /usr/local/bin/BurpSuiteCommunity &>/dev/null & disown
   
 }
 
