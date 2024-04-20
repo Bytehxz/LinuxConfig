@@ -22,7 +22,7 @@ WORDCHARS=${WORDCHARS//\/} # Don't consider certain characters part of the word
 # hide EOL sign ('%')
 PROMPT_EOL_MARK=""
 
-PATH=/root/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/opt/nvim-linux64/bin:/opt/BufferOF/slimm609-checksec.sh-7694735/:/opt/auto_ghidra/:/usr/local/go/bin
+PATH=/root/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/opt/nvim-linux64/bin:/opt/BufferOF/slimm609-checksec.sh-7694735/:/opt/auto_ghidra/:/usr/local/go/bin:/home/bytehxz/.nvm/versions/node/v20.12.0/bin
 # Fix the Java Problem
 export _JAVA_AWT_WM_NONREPARENTING=1
 
@@ -340,10 +340,18 @@ function colorsPython(){
 
 function burp (){
   # /usr/bin/burpsuite &>/dev/null & disown
-#  ~/BurpSuiteCommunity/BurpsuiteCommunity &>/dev/null & disown
-   /usr/local/bin/BurpSuiteCommunity &>/dev/null & disown
+	#  ~/BurpSuiteCommunity/BurpsuiteCommunity &>/dev/null & disown
+  /usr/local/bin/BurpSuiteCommunity &>/dev/null & disown
   
 }
+
+# Alias para batcat
+alias -g -- -h='-h 2>&1 | batcat --language=help --style=plain'
+alias -g -- --help='--help 2>&1 | batcat --language=help --style=plain'
+# alias bathelp='batcat --plain --language=help'
+# function help() {
+#     "$@" --help 2>&1 | bathelp
+# }
 
 function kittyConf(){
   /opt/nvim-linux64/bin/nvim /home/bytehxz/.config/kitty/kitty.conf
@@ -371,3 +379,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Created by `pipx` on 2024-02-15 23:01:25
 export PATH="$PATH:/home/bytehxz/.local/bin"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
