@@ -32,6 +32,11 @@ iface eth0 inet dhcp
 auto eth1
 iface eth1 inet dhcp
 
-
 reboot
+```
+
+Para que se puedan compilar y tener disponibles los temas de batcat
+```bash
+~/.config/bat/themes/
+batcat cache --build
 ```
