@@ -178,18 +178,18 @@ if [ "$color_prompt" = yes ]; then
         ZSH_HIGHLIGHT_STYLES[bracket-level-5]=fg=cyan,bold
         ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]=standout
         # Comandos de color 
-        ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=154 # los guiones de los parámetros
-        ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=154 #  --hola -hi 
+        ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=#9ece6a # los guiones de los parámetros
+        ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=#9ece6a #  --hola -hi 
 
-        ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=212 # pink tipo for while do  
+        ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=#7dcfff # pink tipo for while do  
         
-        ZSH_HIGHLIGHT_STYLES[arg0]=fg=207 # comando principal
-        ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=magenta,underline # green
-        ZSH_HIGHLIGHT_STYLES[precommand]=fg=magenta,underline # green
+        ZSH_HIGHLIGHT_STYLES[arg0]=fg=#fb8aff # comando principal
+        ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=#e0af68,underline # green
+        ZSH_HIGHLIGHT_STYLES[precommand]=fg=#e0af68,underline # green
         
-        ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=cyan
-        ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=cyan
-        ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]=fg=cyan
+        ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=blue
+        ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=yellow
+        ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]=fg=green
 
     fi
 else
