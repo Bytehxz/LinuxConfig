@@ -19,10 +19,14 @@ bspc config pointer_modifier mod1
 # desktop='^2'
 # manage=off
 bspc rule -a Thunar state=floating
-bspc rule -a Navigator desktop='^2'
-bspc rule -a burp-StartBurp state=floating 
+bspc rule -a Navigator desktop='^2' follow=on
+bspc rule -a firefox-esr desktop='^2' follow=on
+bspc rule -a install4j-burp-StartBurp state=floating
+bspc rule -a burpsuite state=floating
+bspc rule -a Wireshark state=floating
 # bspc
 # $( xprop ) para obtener información de la ventana
+# WM_CLASS(STRING) Para el nombre de la ventana y poder ajustarla al propio nombre
 
 feh --bg-fill /home/bytehxz/Documents/Entorno/LinuxConfig/Wallpapers/cat_min.png &
 
