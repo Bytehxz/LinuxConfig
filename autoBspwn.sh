@@ -32,9 +32,9 @@ function toolsUtils(){
   # Instalacion de fuentes nerdfonts
   if [[ -d /usr/local/share/fonts/ ]]; then
     cd $HOME/Documents
-    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/CascadiaCode.zip
-    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Iosevka.zip 
-    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/NerdFontsSymbolsOnly.zip
+    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/CascadiaCode.zip
+    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Iosevka.zip 
+    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/NerdFontsSymbolsOnly.zip
     sudo unzip NerdFontsSymbolsOnly.zip -d /usr/local/share/fonts/
     sudo unzip CascadiaCode.zip -d /usr/local/share/fonts/
     sudo unzip Iosevka.zip -d /usr/local/share/fonts/
