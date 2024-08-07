@@ -22,7 +22,7 @@ WORDCHARS=${WORDCHARS//\/} # Don't consider certain characters part of the word
 # hide EOL sign ('%')
 PROMPT_EOL_MARK=""
 
-PATH=/root/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/opt/nvim-linux64/bin:/opt/BufferOF/slimm609-checksec.sh-7694735/:/opt/auto_ghidra/:/usr/local/go/bin:/home/bytehxz/.nvm/versions/node/v20.12.0/bin
+PATH=/root/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/opt/nvim-linux64/bin:/opt/BufferOF/slimm609-checksec.sh-7694735/:/opt/auto_ghidra/:/usr/local/go/bin:/home/kali/.nvm/versions/node/v20.12.0/bin
 # Fix the Java Problem
 export _JAVA_AWT_WM_NONREPARENTING=1
 
@@ -261,9 +261,9 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias cat='/bin/batcat --paging=never'
+alias cat='/bin/batcat'
 alias catn='/bin/cat'
-alias catl='/bin/batcat'
+alias catl='/bin/batcat --paging=never'
 alias ll='lsd -lh --group-dirs=first'
 alias la='lsd -a --group-dirs=first'
 alias l='lsd --group-dirs=first'
@@ -307,18 +307,18 @@ function clshistory(){
 }
 
 function clstarget (){
-  echo '' > /home/bytehxz/Documents/Entorno/victima
+  echo '' > /home/kali/Documents/Entorno/victima
 }
 
 function settarget (){
   iptarget=$1 
   name=$2
-  echo "$iptarget $name" > /home/bytehxz/Documents/Entorno/victima
+  echo "$iptarget $name" > /home/kali/Documents/Entorno/victima
 }
 
 function mkt (){
-  ip_address=$(/bin/cat /home/bytehxz/Documents/Entorno/victima | awk '{print $1}')
-  machine_name=$(/bin/cat /home/bytehxz/Documents/Entorno/victima | awk '{print $2}')
+  ip_address=$(/bin/cat /home/kali/Documents/Entorno/victima | awk '{print $1}')
+  machine_name=$(/bin/cat /home/kali/Documents/Entorno/victima | awk '{print $2}')
   if [ $ip_address ] && [ $machine_name ]; then
     mkdir $machine_name
     cd $machine_name
@@ -331,11 +331,11 @@ function mkt (){
 }
 
 function colorsBash(){
-    cat /home/bytehxz/Documents/Entorno/coloresBash.txt
+    cat /home/kali/Documents/Entorno/coloresBash.txt
 }
 
 function colorsPython(){
-    cat /home/bytehxz/Documents/Entorno/coloresPython.txt
+    cat /home/kali/Documents/Entorno/coloresPython.txt
 }
 
 function burp (){
@@ -354,7 +354,7 @@ alias -g -- --help='--help 2>&1 | batcat --language=help --style=plain'
 # }
 
 function kittyConf(){
-  /opt/nvim-linux64/bin/nvim /home/bytehxz/.config/kitty/kitty.conf
+  /opt/nvim-linux64/bin/nvim /home/kali/.config/kitty/kitty.conf
 }
 
 function clsDocker(){
@@ -371,14 +371,14 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # bun completions
-[ -s "/home/bytehxz/.local/share/reflex/bun/_bun" ] && source "/home/bytehxz/.local/share/reflex/bun/_bun"
+[ -s "/home/kali/.local/share/reflex/bun/_bun" ] && source "/home/kali/.local/share/reflex/bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.local/share/reflex/bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Created by `pipx` on 2024-02-15 23:01:25
-export PATH="$PATH:/home/bytehxz/.local/bin"
+export PATH="$PATH:/home/kali/.local/bin"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

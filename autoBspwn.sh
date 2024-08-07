@@ -10,36 +10,43 @@ purpleColour="\e[0;35m\033[1m"
 turquoiseColour="\e[0;36m\033[1m"
 grayColour="\e[0;37m\033[1m"
 
+function InstallFonts(){
+	cd $HOME/Documents
+	wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/CascadiaCode.zip
+	wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Iosevka.zip 
+	wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/NerdFontsSymbolsOnly.zip
+	sudo unzip NerdFontsSymbolsOnly.zip -d /usr/local/share/fonts/
+	sudo unzip CascadiaCode.zip -d /usr/local/share/fonts/
+	sudo unzip Iosevka.zip -d /usr/local/share/fonts/
+	wget https://github.com/lsd-rs/lsd/releases/download/v1.1.2/lsd_1.1.2_amd64.deb
+	sudo dpkg -i lsd_1.1.2_amd64.deb
+}
 # Parte 4 --------------------------------------------- instalando herramientas y las fuentes necesarias para que todo funcione
 function toolsUtils(){
   echo -e "${blueColour}[!] Instalando las fuentes para que se vea bonito :D${endColour}"
   sleep 4
   # Instalación de la herramientas que suelo usar
   sudo apt install -y rofi feh picom bat xclip npm bspwm fd-find ripgrep
+	cd 
 
   sudo apt install -y --reinstall virtualbox-guest-x11 # Para instalar la virtualbox tools
 
   #instalacion de go 
-  cd $HOME/Documents
+  # cd $HOME/Documents
   # wget https://go.dev/dl/go1.22.0.linux-amd64.tar.gz
   # sudo rm -rf /usr/local/go 
   # sudo tar -C /usr/local -xzf go1.22.0.linux-amd64.tar.gz
 
   # Instalando lo necesario para el lenguaje go
   # go install golang.org/x/tools/gopls@latest
-  go install github.com/jesseduffield/lazygit@latest
+  # go install github.com/jesseduffield/lazygit@latest
 
   # Instalacion de fuentes nerdfonts
   if [[ -d /usr/local/share/fonts/ ]]; then
-    cd $HOME/Documents
-    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/CascadiaCode.zip
-    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Iosevka.zip 
-    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/NerdFontsSymbolsOnly.zip
-    sudo unzip NerdFontsSymbolsOnly.zip -d /usr/local/share/fonts/
-    sudo unzip CascadiaCode.zip -d /usr/local/share/fonts/
-    sudo unzip Iosevka.zip -d /usr/local/share/fonts/
-    wget https://github.com/lsd-rs/lsd/releases/download/v1.0.0/lsd_1.0.0_amd64.deb
-    sudo dpkg -i lsd_1.0.0_amd64.deb
+		InstallFonts
+	else
+		sudo mkdir /usr/local/share/fonts/
+		InstallFonts
   fi
 
   echo -e "${turquoiseColour}[+] Ha terminado la instalación de todo lo necesario"
@@ -52,15 +59,20 @@ function installOPT(){
   echo -e "${yellowColour}[!] Instalando todo en el directorio /opt${endColour}"
   sleep 3
 
-  echo -e "${turquoiseColour}[%] Instalando waterfox${endColour}"
-  sleep 1
-  sudo chown $USER:$USER /opt
-  cd /opt 
-  mkdir Waterfox
-  cd Waterfox
-  wget https://cdn1.waterfox.net/waterfox/releases/latest/linux
-  tar -xf linux
-  rm linux
+	cd $HOME/Downloads/
+	wget https://github.com/swsnr/mdcat/releases/download/mdcat-2.3.1/mdcat-2.3.1-x86_64-unknown-linux-musl.tar.gz
+	tar -xf mdcat-2.3.1-x86_64-unknown-linux-musl.tar.gz
+	sudo mv mdcat-2.3.1-x86_64-unknown-linux-musl/mdcat /usr/bin/mdcat
+
+  # echo -e "${turquoiseColour}[%] Instalando waterfox${endColour}"
+  # sleep 1
+  # sudo chown $USER:$USER /opt
+  # cd /opt 
+  # mkdir Waterfox
+  # cd Waterfox
+  # wget https://cdn1.waterfox.net/waterfox/releases/latest/linux
+  # tar -xf linux
+  # rm linux
 
   # Instalando la kittyTerminal
   echo -e "${turquoiseColour}[%] Instalando kitty${endColour}"
@@ -68,9 +80,9 @@ function installOPT(){
   cd /opt 
   mkdir kitty
   cd kitty
-	wget https://github.com/kovidgoyal/kitty/releases/download/v0.34.1/kitty-0.34.1-x86_64.txz
-	tar -xf kitty-0.34.1-x86_64.txz
-  rm kitty-0.34.1-x86_64.txz
+	wget https://github.com/kovidgoyal/kitty/releases/download/v0.35.2/kitty-0.35.2-x86_64.txz
+	tar -xf kitty-0.35.2-x86_64.txz
+	rm kitty-0.35.2-x86_64.txz
 
   # instalando Telegram
   echo -e "${turquoiseColour}[%] Instalando Telegram${endColour}"
