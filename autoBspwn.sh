@@ -58,11 +58,12 @@ function installOPT(){
   # Instalacion del navegador Waterfox
   echo -e "${yellowColour}[!] Instalando todo en el directorio /opt${endColour}"
   sleep 3
+  sudo chown kali:kali /opt
 
-	cd $HOME/Downloads/
-	wget https://github.com/swsnr/mdcat/releases/download/mdcat-2.3.1/mdcat-2.3.1-x86_64-unknown-linux-musl.tar.gz
-	tar -xf mdcat-2.3.1-x86_64-unknown-linux-musl.tar.gz
-	sudo mv mdcat-2.3.1-x86_64-unknown-linux-musl/mdcat /usr/bin/mdcat
+  cd $HOME/Downloads/
+  wget https://github.com/swsnr/mdcat/releases/download/mdcat-2.3.1/mdcat-2.3.1-x86_64-unknown-linux-musl.tar.gz
+  tar -xf mdcat-2.3.1-x86_64-unknown-linux-musl.tar.gz
+  sudo mv mdcat-2.3.1-x86_64-unknown-linux-musl/mdcat /usr/bin/mdcat
 
   # echo -e "${turquoiseColour}[%] Instalando waterfox${endColour}"
   # sleep 1
@@ -80,9 +81,9 @@ function installOPT(){
   cd /opt 
   mkdir kitty
   cd kitty
-	wget https://github.com/kovidgoyal/kitty/releases/download/v0.35.2/kitty-0.35.2-x86_64.txz
-	tar -xf kitty-0.35.2-x86_64.txz
-	rm kitty-0.35.2-x86_64.txz
+  wget https://github.com/kovidgoyal/kitty/releases/download/v0.35.2/kitty-0.35.2-x86_64.txz
+  tar -xf kitty-0.35.2-x86_64.txz
+  rm kitty-0.35.2-x86_64.txz
 
   # instalando Telegram
   echo -e "${turquoiseColour}[%] Instalando Telegram${endColour}"
@@ -217,8 +218,9 @@ function bspwm_sxhkd(){
   cp -R $HOME/Documents/Entorno/LinuxConfig/config/sxhkd $HOME/.config/
   cp -R $HOME/Documents/Entorno/LinuxConfig/config/lsd $HOME/.config/
   cp -R $HOME/Documents/Entorno/LinuxConfig/config/kitty $HOME/.config/
-	cp -R $HOME/Documents/Entorno/LinuxConfig/config/bat $HOME/.config/
+  cp -R $HOME/Documents/Entorno/LinuxConfig/config/bat $HOME/.config/
   sleep 3
+  sudo mkdir /root/.config
   sudo ln -s -f $HOME/.config/kitty /root/.config/kitty
   sudo ln -s -f $HOME/.config/lsd /root/.config/lsd
   sudo ln -s -f $HOME/.config/nvim /root/.config/nvim
