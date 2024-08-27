@@ -29,7 +29,7 @@ function toolsUtils(){
   sudo apt install -y rofi feh picom bat xclip npm bspwm fd-find ripgrep
 	cd 
 
-  sudo apt install -y --reinstall virtualbox-guest-x11 # Para instalar la virtualbox tools
+  # sudo apt install -y --reinstall virtualbox-guest-x11 # Para instalar la virtualbox tools
 
   #instalacion de go 
   # cd $HOME/Documents
