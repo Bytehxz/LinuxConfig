@@ -38,7 +38,8 @@ feh --bg-fill ~/Documents/Entorno/LinuxConfig/Wallpapers/cat_min.png &
 bash ~/.config/polybar/launch.sh --blocks &
 
 picom --config ~/.config/picom/picom.conf &
-
+# Solution for picom error
+# picom --config ~/.config/picom/picom.conf --daemon &
 setxkbmap latam
 
 bspc config border_width         4
