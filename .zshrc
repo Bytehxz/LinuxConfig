@@ -270,7 +270,7 @@ alias l='lsd --group-dirs=first'
 alias lla='lsd -lha --group-dirs=first'
 alias ls='lsd --group-dirs=first'
 alias nvim='/opt/nvim-linux64/bin/nvim'
-alias vimn='vim'
+alias gdb-pwndbg='/opt/Pwndbg/pwndbg/bin/pwndbg'
 alias showimg='/opt/kitty/bin/kitty +kitten icat'
 
 # enable auto-suggestions based on the history
@@ -324,6 +324,7 @@ function mkt (){
     cd $machine_name
     mkdir {scan,content,exploit}
     cd scan
+		mkdir nmap
   else
     echo -e "[!] No target!"
   fi
@@ -345,13 +346,6 @@ function burp (){
   
 }
 
-# Alias para batcat
-alias -g -- -h='-h 2>&1 | batcat --language=help --style=plain'
-alias -g -- --help='--help 2>&1 | batcat --language=help --style=plain'
-# alias bathelp='batcat --plain --language=help'
-# function help() {
-#     "$@" --help 2>&1 | bathelp
-# }
 
 function kittyConf(){
   /opt/nvim-linux64/bin/nvim /home/kali/.config/kitty/kitty.conf
