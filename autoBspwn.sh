@@ -81,9 +81,9 @@ function installOPT(){
   cd /opt 
   mkdir kitty
   cd kitty
-  wget https://github.com/kovidgoyal/kitty/releases/download/v0.35.2/kitty-0.35.2-x86_64.txz
-  tar -xf kitty-0.35.2-x86_64.txz
-  rm kitty-0.35.2-x86_64.txz
+  wget https://github.com/kovidgoyal/kitty/releases/download/v0.37.0/kitty-0.37.0-x86_64.txz
+  tar -xf kitty-0.37.0-x86_64.txz
+  rm kitty-0.37.0-x86_64.txz
 
   # instalando Telegram
   echo -e "${turquoiseColour}[%] Instalando Telegram${endColour}"
@@ -97,7 +97,7 @@ function installOPT(){
   echo -e "${turquoiseColour}[%] Instalando nvim${endColour}"
   sleep 3
   cd /opt 
-  wget https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz
+  wget https://github.com/neovim/neovim/releases/download/v0.10.1/nvim-linux64.tar.gz
   tar -xf nvim-linux64.tar.gz
   rm nvim-linux64.tar.gz
 
