@@ -183,7 +183,7 @@ if [ "$color_prompt" = yes ]; then
 
         ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=#7dcfff # pink tipo for while do  
         
-        ZSH_HIGHLIGHT_STYLES[arg0]=fg=#fb8aff # comando principal
+        ZSH_HIGHLIGHT_STYLES[arg0]=fg=#f5bde6 # comando principal
         ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=#e0af68,underline # green
         ZSH_HIGHLIGHT_STYLES[precommand]=fg=#e0af68,underline # green
         
