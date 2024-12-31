@@ -35,12 +35,12 @@
     os_icon                 # os identifier
     dir                     # current directory
     vcs                     # git status
-    status
     command_execution_time
+    status
     context
-    virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
-    direnv                  # direnv status (https://direnv.net/)
-    pyenv                   # python environment (https://github.com/pyenv/pyenv)
+    # virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
+    # direnv                  # direnv status (https://direnv.net/)
+    # pyenv                   # python environment (https://github.com/pyenv/pyenv)
 
     # ip                    # ip address and bandwidth usage for a specified network interface
     # =========================[ Line #2 ]=========================
@@ -233,7 +233,7 @@
   ##################################[ dir: current directory ]##################################
   # Default current directory color.
   typeset -g POWERLEVEL9K_DIR_FOREGROUND=232
-  typeset -g POWERLEVEL9K_DIR_BACKGROUND=#bb9af7
+  typeset -g POWERLEVEL9K_DIR_BACKGROUND=#bcc0cc
   # If directory is too long, shorten some of its segments to the shortest possible unique
   # prefix. The shortened directory can be tab-completed to the original.
   typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_unique
@@ -370,11 +370,11 @@
   # Branch icon. Set this parameter to '\UE0A0 ' for the popular Powerline branch icon.
   typeset -g POWERLEVEL9K_VCS_BRANCH_ICON='\uF126 '
   # 126
-  typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND=93
-  typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=93
-  typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=93
-  typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND=93
-  typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND=93
+  typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND=#292c3c
+  typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=#292c3c
+  typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=#292c3c
+  typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND=#292c3c
+  typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND=#292c3c
 
   # Untracked files icon. It's really a question mark, your font isn't broken.
   # Change the value of this parameter to show a different icon.
@@ -543,29 +543,29 @@
   # Status on success. No content, just an icon. No need to show it if prompt_char is enabled as
   # it will signify success by turning green.
   typeset -g POWERLEVEL9K_STATUS_OK=true
-  typeset -g POWERLEVEL9K_STATUS_OK_FOREGROUND=51 
-  typeset -g POWERLEVEL9K_STATUS_OK_BACKGROUND=39
+  typeset -g POWERLEVEL9K_STATUS_OK_FOREGROUND=#a6d189
+  typeset -g POWERLEVEL9K_STATUS_OK_BACKGROUND=#303446
   typeset -g POWERLEVEL9K_STATUS_OK_VISUAL_IDENTIFIER_EXPANSION='✔'
 
   # Status when some part of a pipe command fails but the overall exit status is zero. It may look
   # like this: 1|0.
   typeset -g POWERLEVEL9K_STATUS_OK_PIPE=true
-  typeset -g POWERLEVEL9K_STATUS_OK_PIPE_FOREGROUND=51 
-  typeset -g POWERLEVEL9K_STATUS_OK_PIPE_BACKGROUND=51 
+  typeset -g POWERLEVEL9K_STATUS_OK_PIPE_FOREGROUND=#e78284
+  typeset -g POWERLEVEL9K_STATUS_OK_PIPE_BACKGROUND=#303446
 
   typeset -g POWERLEVEL9K_STATUS_OK_PIPE_VISUAL_IDENTIFIER_EXPANSION='✔'
 
   # Status when it's just an error code (e.g., '1'). No need to show it if prompt_char is enabled as
   # it will signify error by turning red.
   typeset -g POWERLEVEL9K_STATUS_ERROR=true
-  typeset -g POWERLEVEL9K_STATUS_ERROR_FOREGROUND=190
-  typeset -g POWERLEVEL9K_STATUS_ERROR_BACKGROUND=160
+  typeset -g POWERLEVEL9K_STATUS_ERROR_FOREGROUND=#e78284
+  typeset -g POWERLEVEL9K_STATUS_ERROR_BACKGROUND=#303446
   typeset -g POWERLEVEL9K_STATUS_ERROR_VISUAL_IDENTIFIER_EXPANSION='✘'
 
   # Status when the last command was terminated by a signal.
   typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL=true
-  typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_FOREGROUND=190
-  typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_BACKGROUND=160
+  typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_FOREGROUND=#e78284
+  typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_BACKGROUND=#303446
   # Use terse signal names: "INT" instead of "SIGINT(2)".
   typeset -g POWERLEVEL9K_STATUS_VERBOSE_SIGNAME=false
   typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_VISUAL_IDENTIFIER_EXPANSION='✘'
@@ -573,8 +573,8 @@
   # Status when some part of a pipe command fails and the overall exit status is also non-zero.
   # It may look like this: 1|0.
   typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE=true
-  typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_FOREGROUND=190 
-  typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_BACKGROUND=160 
+  typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_FOREGROUND=#e78284
+  typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_BACKGROUND=#303446
 
   typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_VISUAL_IDENTIFIER_EXPANSION='✘'
 
@@ -584,14 +584,14 @@
   # Show this many fractional digits. Zero means round to seconds.
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_PRECISION=0
   # Execution time color.
-  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=232
-  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=231
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=#c6d0f5
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=#626880
   # Duration format: 1d 2h 3m 4s.
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FORMAT='d h m s'
   # Custom icon.
   # typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # Custom prefix.
-  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_PREFIX='%232Ftook '
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_PREFIX='%254Ftook '
 
   #######################[ background_jobs: presence of background jobs ]#######################
   # Don't show the number of background jobs.
@@ -969,7 +969,7 @@
   # Custom icon.
   # typeset -g POWERLEVEL9K_CONTEXT_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # Custom prefix.
-  typeset -g POWERLEVEL9K_CONTEXT_PREFIX='%255Fby '
+  # typeset -g POWERLEVEL9K_CONTEXT_PREFIX='%255F '
 
   ###[ virtualenv: python virtual environment (https://docs.python.org/3/library/venv.html) ]###
   # Python virtual environment color.
