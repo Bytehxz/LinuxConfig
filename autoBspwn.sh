@@ -26,7 +26,7 @@ function toolsUtils(){
   echo -e "${blueColour}[!] Instalando las fuentes para que se vea bonito :D${endColour}"
   sleep 4
   # Instalación de la herramientas que suelo usar
-  sudo apt install -y rofi feh picom bat xclip npm bspwm fd-find ripgrep
+  sudo apt install -y rofi feh bat xclip npm bspwm fd-find ripgrep flameshot # picom
 	cd 
 
   # sudo apt install -y --reinstall virtualbox-guest-x11 # Para instalar la virtualbox tools
@@ -49,6 +49,9 @@ function toolsUtils(){
 		InstallFonts
   fi
 
+
+
+
   echo -e "${turquoiseColour}[+] Ha terminado la instalación de todo lo necesario"
   sleep 2
 }
@@ -64,6 +67,7 @@ function installOPT(){
   wget https://github.com/swsnr/mdcat/releases/download/mdcat-2.3.1/mdcat-2.3.1-x86_64-unknown-linux-musl.tar.gz
   tar -xf mdcat-2.3.1-x86_64-unknown-linux-musl.tar.gz
   sudo mv mdcat-2.3.1-x86_64-unknown-linux-musl/mdcat /usr/bin/mdcat
+	rm -rf $HOME/Downloads/*
 
   # echo -e "${turquoiseColour}[%] Instalando waterfox${endColour}"
   # sleep 1
@@ -82,8 +86,9 @@ function installOPT(){
   mkdir kitty
   cd kitty
   wget https://github.com/kovidgoyal/kitty/releases/download/v0.37.0/kitty-0.37.0-x86_64.txz
-  tar -xf kitty-0.37.0-x86_64.txz
-  rm kitty-0.37.0-x86_64.txz
+	wget https://github.com/kovidgoyal/kitty/releases/download/v0.39.1/kitty-0.39.1-x86_64.txz
+  tar -xf kitty-0.39.1-x86_64.txz
+  rm kitty-0.39.1-x86_64.txz
 
   # instalando Telegram
   echo -e "${turquoiseColour}[%] Instalando Telegram${endColour}"
@@ -229,6 +234,20 @@ function bspwm_sxhkd(){
   # cd $HOME/Documents/Entorno
   # touch victima
   # cp $HOME/Documents/Entorno/LinuxConfig/
+	
+	# ------------- Picom Install from github repositorie
+	sudo apt install libconfig-dev libdbus-1-dev libegl-dev libev-dev libgl-dev libepoxy-dev libpcre2-dev libpixman-1-dev libx11-xcb-dev libxcb1-dev libxcb-composite0-dev libxcb-damage0-dev libxcb-glx0-dev libxcb-image0-dev libxcb-present-dev libxcb-randr0-dev libxcb-render0-dev libxcb-render-util0-dev libxcb-shape0-dev libxcb-util-dev libxcb-xfixes0-dev meson ninja-build uthash-dev -y 
+	
+	cd $HOME/Documents
+	git clone https://github.com/yshui/picom.git
+	cd picom/
+	meson setup --buildtype=release build
+	sudo ninja -C build install
+
+
+
+
+
 
   echo -e "${greenColour}[+] Terminado ${endColour}"
   sleep 1.5
