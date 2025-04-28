@@ -23,8 +23,8 @@ bspc rule -a Navigator desktop='^2' follow=on
 bspc rule -a firefox-esr desktop='^2' follow=on
 bspc rule -a waterfox desktop='^2' follow=on
 bspc rule -a install4j-burp-StartBurp state=floating 
-bspc rule -a burpsuite state=floating desktop='^3'
-bspc rule -a burp-StartBurp state=floating desktop='^3'
+bspc rule -a burpsuite state=floating desktop='^3' follow=on
+bspc rule -a burp-StartBurp state=floating desktop='^3' follow=on
 bspc rule -a Wireshark state=floating
 # bspc rule -a kitty state=floating rectangle=600x400+300+250
 #  terminal Kitty, se abrirá en modo flotante con un tamaño de 800x600 píxeles, ubicada a 100 píxeles desde el borde izquierdo y 100 píxeles desde el borde superior de la pantalla.
