@@ -23,7 +23,7 @@ function dockerInstall(){
 
   echo -e "\n\t${grayColour}[~] Comenzando la instalación de ${turquoiseColour}docker-compose${endColour}\n"
 	cd $HOME/Downloads/
-	wget https://github.com/docker/compose/releases/download/v2.29.1/docker-compose-linux-x86_64
+	wget https://github.com/docker/compose/releases/download/v2.37.3/docker-compose-linux-x86_64
 	mv docker-compose-linux-x86_64 docker-compose
 	sudo chown root:root docker-compose
 	sudo chmod +x docker-compose

@@ -49,8 +49,9 @@ function toolsUtils(){
 		InstallFonts
   fi
 
-
-
+	if [[ -f /usr/local/share/zsh/site-functions/_bspc ]]; then
+		sudo chown root:root /usr/local/share/zsh/site-functions/_bspc
+	fi
 
   echo -e "${turquoiseColour}[+] Ha terminado la instalación de todo lo necesario"
   sleep 2
