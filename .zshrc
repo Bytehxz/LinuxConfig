@@ -22,9 +22,16 @@ WORDCHARS=${WORDCHARS//\/} # Don't consider certain characters part of the word
 # hide EOL sign ('%')
 PROMPT_EOL_MARK=""
 
-PATH=/root/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/opt/nvim-linux64/bin:/opt/BufferOF/slimm609-checksec.sh-7694735/:/opt/auto_ghidra/:/usr/local/go/bin:/home/kali/.nvm/versions/node/v20.12.0/bin
+PATH=/root/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/opt/nvim-linux-x86_64/bin:/opt/BufferOF/slimm609-checksec.sh-7694735/:/opt/auto_ghidra/:/usr/local/go/bin:/home/kali/.nvm/versions/node/v20.12.0/bin:/home/kali/.cargo/bin/
 # Fix the Java Problem
 export _JAVA_AWT_WM_NONREPARENTING=1
+
+
+# ------------------------------- ANDROID PENTEST -------------------------------
+export ANDROID_ADB_SERVER_ADDRESS=192.168.100.2
+export ANDROID_ADB_SERVER_PORT=5037
+
+
 
 # Para que funcione el gef
 export LC_CTYPE=C.UTF-8
@@ -269,7 +276,7 @@ alias la='lsd -a --group-dirs=first'
 alias l='lsd --group-dirs=first'
 alias lla='lsd -lha --group-dirs=first'
 alias ls='lsd --group-dirs=first'
-alias nvim='/opt/nvim-linux64/bin/nvim'
+alias nvim='/opt/nvim-linux-x86_64/bin/nvim'
 alias gdb-pwndbg='/opt/Pwndbg/pwndbg/bin/pwndbg'
 alias showimg='/opt/kitty/bin/kitty +kitten icat'
 
@@ -348,7 +355,7 @@ function burp (){
 
 
 function kittyConf(){
-  /opt/nvim-linux64/bin/nvim /home/kali/.config/kitty/kitty.conf
+  /opt/nvim-linux-x86_64/bin/nvim /home/kali/.config/kitty/kitty.conf
 }
 
 function clsDocker(){

@@ -2,21 +2,11 @@
 
 Archivos de configuración
 
-## Entorno
-- Bspwmrc
-- Sxhkd
-- Polybar-themes
-- Lazygit
+- kitty
+- lsd
+- mdcat
 
-
-### Tested on Kali Linux
-
-# Lo primero que debes hacer es:
-
-```bash
-mkdir -p ~/Documents/Entorno/ && cd ~/Documents/Entorno/
-
-```
+## Tested on Kali Linux
 
 Para poder tener 2 interfaces funcionales en Virtualbox y Kali Linux 
 ```bash
