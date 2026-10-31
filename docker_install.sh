@@ -15,7 +15,7 @@ function dockerInstall(){
   user=$(whoami)
   echo -e "\n\t${grayColour}[~] Comenzando la instalación de ${turquoiseColour}Docker${endColour}\n"
   sleep 2
-	echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian bookworm stable" | sudo tee /etc/apt/sources.list.d/docker.list
+	echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian trixie stable" | sudo tee /etc/apt/sources.list.d/docker.list
 	curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 	sudo apt update
 	sudo apt install -y docker-ce docker-ce-cli containerd.io
@@ -23,7 +23,7 @@ function dockerInstall(){
 
   echo -e "\n\t${grayColour}[~] Comenzando la instalación de ${turquoiseColour}docker-compose${endColour}\n"
 	cd $HOME/Downloads/
-	wget https://github.com/docker/compose/releases/download/v2.37.3/docker-compose-linux-x86_64
+	wget https://github.com/docker/compose/releases/download/v5.6.1/docker-compose-linux-x86_64
 	mv docker-compose-linux-x86_64 docker-compose
 	sudo chown root:root docker-compose
 	sudo chmod +x docker-compose
